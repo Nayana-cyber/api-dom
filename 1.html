@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile </title>
+    <link rel="stylesheet" href="style1.css">
+</head>
+<body>
+    <h1>Profile Setup</h1>
+    <form id="profile-form">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name"><br><br>
+        <label for="category">Favorite Category:</label>
+        <select id="category" name="category"> 
+            <option value="Sports">Sports</option>
+            <option value="Music">Music</option>
+            <option value="Technology">Technology</option>
+        </select><br><br>
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+
+const form = document.getElementById('profile-form');
+form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    const name = document.getElementById('name').value;
+    const category = document.getElementById('category').value;
+
+    if (name === '' || category === '') {
+        alert('Please fill in all fields');
+    } else {
+        localStorage.setItem('name', name);
+        localStorage.setItem('category', category);
+        window.location.href = '2.html';
+    }
+});
+    </script>
+</body>
+</html>
+    
+</body>
+</html>
